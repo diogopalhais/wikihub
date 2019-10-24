@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .container
+    .file
+      .file-header
+        if icon === 'octicon-file' && !readonly
+          .file-actions
+            a.muted-link(href=`${route}?edit=1`, style='margin-right:15px')
+              span.octicon.octicon-pencil
+              |  Edit 
+            a.danger-link(href=`${route}?delete=1`)
+              span.octicon.octicon-trashcan
+              |  Delete
+        span.header-title
+            span.octicon(class=icon)
+            |  #{title}
+            if search == null && lastModified
+              span.file-info-divider
+              span.file-modified Last modified #{lastModified}
+      .readme.instapaper_body(class={ 'search': search })
+        div(class={ 'markdown-body': icon !== 'octicon-file-media'}) !{content}

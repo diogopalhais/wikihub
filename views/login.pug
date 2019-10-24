@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title #{title}
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel="shortcut icon", href="/_hads/assets/favicon.ico")
+        link(href=`/_hads/css/github.css`, rel='stylesheet', type='text/css')
+        link(href=`/_hads/css/style.css`, rel='stylesheet', type='text/css')
+    body
+        .container(style='margin-top:90px')
+            div.auth-form.session-authentication
+                div.auth-form-header.p-0
+                    h1 Sign in to Wiki
+                if message!=''
+                    div.flash.flash-full.flash-error(style='margin-bottom:20px')
+                        div.container #{message}
+                form.auth-form-body(method='POST', action='/login')
+                    label Username
+                    input.form-control.form-control-lg.input-block(type='text', name='username', placeholder='username', value=username)
+                    label Password
+                    input.form-control.form-control-lg.input-block(type='password', name='password', placeholder='password', value=password)
+                    button.btn.btn-secondary.btn-block(type='submit') Sign in
