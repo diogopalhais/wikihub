@@ -7,7 +7,6 @@
   "scripts": {
     "dev": "nodemon hads.js",
     "start": "node hads.js ./docs -o",
-    "build": "node hads.js ./docs",
     "export": "node hads.js ./test -e export-test && npx http-server export-test",
     "test": "eslint *.js lib/*.js",
     "postpublish": "git tag -a $npm_package_version -m \"$npm_package_version\" && git push --tags"
