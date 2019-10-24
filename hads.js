@@ -208,7 +208,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(require('morgan')('combined'));
-app.use(require('express-session')({ secret: 'reddocs' }));
+app.use(require('express-session')({ secret: 'wikidocs', resave: false, saveUninitialized: true, }));
 app.use(require('connect-flash')());
 
 app.use(passport.initialize());
