@@ -25,6 +25,11 @@ This project is based in the project [Hads](https://github.com/sinedied/hads).
 - 100% offline
 - Custom CSS style
 
+### [Demo](https://wikihub.herokuapp.com)
+```
+username: user 
+password: secret
+```
 
 ## Usage
 
