@@ -17,8 +17,8 @@ const Helpers = require('./lib/helpers.js');
 const Indexer = require('./lib/indexer.js');
 
 const passport = require('passport');
-var Strategy = require('passport-local').Strategy;
-var db = require('./db');
+let Strategy = require('passport-local').Strategy;
+let db = require('./db');
 
 passport.use(new Strategy(
   function (username, password, cb) {
@@ -48,7 +48,7 @@ const args = optimist
   .default('p', 4040) // eslint-disable-line no-magic-numbers
   .alias('h', 'host')
   .describe('h', 'Host address to bind to')
-  .default('h', 'localhost')
+  .default('h', '0.0.0.0')
   .alias('i', 'images-dir')
   .describe('i', 'Directory to store images')
   .default('i', 'images')
@@ -460,15 +460,18 @@ if (!args.readonly) {
   }]);
 }
 
+const port = process.env.PORT || args.port;
+
 indexer.indexFiles().then(() => {
-  app.listen(args.port, args.host, () => {
-    const serverUrl = `http://${args.host}:${args.port}`;
+  app.listen(port, args.host, () => {
+    const serverUrl = `http://${args.host}:${port}`;
     console.log(`${pkg.name} ${pkg.version} serving at ${serverUrl} (press CTRL+C to exit)`);
 
     if (args.open) {
       require('open')(serverUrl);
     }
   });
+
 });
 
 exports = app;
