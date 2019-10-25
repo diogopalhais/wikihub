@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config()
 const fs = require('fs-extra');
 const path = require('path');
 const optimist = require('optimist');
@@ -325,8 +326,10 @@ app.get('*',
 
   function tryProcessFile() {
     contentPromise = null;
+    
+    route = route.toLowerCase();
     filePath = path.join(PATHS.root, route);
-
+    
     return fs.stat(filePath)
       .then(stat => {
         search = query.search && query.search.length > 0 ? query.search.trim() : null;
