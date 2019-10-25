@@ -11,13 +11,13 @@ html
         .container(style='margin-top:90px')
             div.auth-form.session-authentication
                 div.auth-form-header.p-0
-                    h1 Sign in to Wiki
+                    h1 Sign in to Wikihub
                 if message!=''
                     div.flash.flash-full.flash-error(style='margin-bottom:20px')
                         div.container #{message}
                 form.auth-form-body(method='POST', action='/login')
                     label Username
-                    input.form-control.form-control-lg.input-block(type='text', name='username', placeholder='username', value='redadviser')
+                    input.form-control.form-control-lg.input-block(type='text', name='username', placeholder='username', value=username)
                     label Password
-                    input.form-control.form-control-lg.input-block(type='password', name='password', placeholder='password', value='123456Az')
+                    input.form-control.form-control-lg.input-block(type='password', name='password', placeholder='password', value=password)
                     button.btn.btn-secondary.btn-block(type='submit') Sign in
