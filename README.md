@@ -1,9 +1,17 @@
-# Documentation server based on hads
+# Wikihub
 
-> **Hads** is a fast Node.js based web server allowing to browse, search and edit documentation written in
-[Markdown](http://daringfireball.net/projects/markdown/).
+ > Node.js based web server allowing to organize, search, create, edit and delete documentation written in [Markdown](http://daringfireball.net/projects/markdown/).
 
-**Features**:
+This project is based in the project [Hads](https://github.com/sinedied/hads).
+
+![screenshot](https://cloud.githubusercontent.com/assets/593151/24351859/afb0b958-12e7-11e7-8ad4-8655e6b3c1c1.png)
+
+**Added features**:
+
+- Local Auth with passport.js
+- Delete files
+
+**Hads Core Features**:
 
 - No configuration needed
 - Github-like presentation
@@ -20,11 +28,34 @@
 
 ## Usage
 
+### Localhost
+
+Copy and configure .env with desired user credentials
+
 ```bash
-yarn dev | yarn start
+cp .env.example .env
+```
+
+Then
+
+```bash
+yarn start 
 ```
 
 Your browser will open `http://localhost:4040` and display your project documentation.
+
+Or using `nodemon`
+
+```bash
+yarn dev 
+```
+
+### Docker
+
+```bash
+docker build -t wikihub .
+docker run -d -p 4040:4040 --name wikihub wikihub
+```
 
 ### Command-line options
 
@@ -63,26 +94,6 @@ specified *root dir*. File and folder names will be *humanized* for better reada
 
 It is particularly useful on the home page to provide an overview of the available documentation for your project.
 
-### Diagrams and flowcharts
+### More Info
 
-You can use the [Mermaid](http://knsv.github.io/mermaid/) syntax to insert diagrams and flowcharts directly in your
-markdown, but using code blocks with the `mermaid` language specified, like this:
-
-    ```mermaid
-    graph TD;
-        A-->B;
-        A-->C;
-        B-->D;
-        C-->D;
-    ```
-
-Mermaid [configuration](https://mermaidjs.github.io/mermaidAPI.html) can be overridden on a given page using the global variable `MERMAID_CONFIG` in a `<script>` tag, for example:
-
-```html
-<script>
-MERMAID_CONFIG = { theme: 'forest' };
-</script>
-```
-
-## Variants
-- [hads-plantuml](https://www.npmjs.com/package/hads-plantuml): Adds PlantUML support for diagrams
+For more info you can view the [Hads](https://github.com/sinedied/hads) project.
