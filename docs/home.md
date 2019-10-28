@@ -3,8 +3,8 @@
 This is the main page of the wiki.
 
 Helpers:
-- [Markdown cheatsheet](cheatsheet)
-- [Extras](extras)
+- [Markdown cheatsheet](help/cheatsheet)
+- [Extras](help/extras)
 
 ***
 
