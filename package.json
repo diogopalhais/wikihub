@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "hads.js",
   "scripts": {
-    "dev": "nodemon hads.js",
+    "dev": "nodemon hads.js ./docs-example",
     "start": "node hads.js ./docs -o",
     "export": "node hads.js ./docs -e build && npx http-server build",
     "test": "eslint *.js lib/*.js"
