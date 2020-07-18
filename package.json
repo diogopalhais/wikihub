@@ -28,7 +28,7 @@
     "fs-extra": "^8.1.0",
     "globby": "^10.0.1",
     "highlight.js": "^9.15.9",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "marked": "^0.7.0",
     "mermaid": "^8.2.3",
     "moment": "^2.24.0",
