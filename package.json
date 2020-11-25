@@ -27,7 +27,7 @@
     "font-awesome": "^4.7.0",
     "fs-extra": "^8.1.0",
     "globby": "^10.0.1",
-    "highlight.js": "^9.15.9",
+    "highlight.js": "^10.1.2",
     "lodash": "^4.17.15",
     "marked": "^0.7.0",
     "mermaid": "^8.2.3",
